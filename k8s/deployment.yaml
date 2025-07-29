@@ -16,6 +16,7 @@ spec:
       containers:
         - name: microservice
           image: microservice1988.azurecr.io/myapp:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---
