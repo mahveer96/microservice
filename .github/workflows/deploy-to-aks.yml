@@ -29,14 +29,14 @@ jobs:
     - name: Azure Container Registry Login
       uses: azure/docker-login@v1
       with:
-        login-server: microservice.azurecr.io
+        login-server: microservice1988.azurecr.io
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t microservice.azurecr.io/myapp:v1 .
-        docker push microservice.azurecr.io/myapp:v1
+        docker build -t microservice1988.azurecr.io/myapp:v1 .
+        docker push microservice1988.azurecr.io/myapp:v1
 
     - name: Set AKS Context
       uses: azure/aks-set-context@v3
