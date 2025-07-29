@@ -35,8 +35,11 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t microservice1988.azurecr.io/myapp:v1 .
-        docker push microservice1988.azurecr.io/myapp:v1
+
+         docker buildx create --use       
+         docker buildx build --platform linux/amd64 -t microservice1988.azurecr.io/myapp:v1 --push .
+        #docker build -t microservice1988.azurecr.io/myapp:v1 .
+        #docker push microservice1988.azurecr.io/myapp:v1
 
     - name: Set AKS Context
       uses: azure/aks-set-context@v3
